@@ -1,0 +1,1302 @@
+/* =========================================================
+   HOW IT WORKS PAGE
+========================================================= */
+
+.how-page {
+  min-height: 100vh;
+  padding: 90px 8%;
+  background:
+    radial-gradient(circle at 8% 5%, #eaf2fb 0%, transparent 28%),
+    radial-gradient(circle at 92% 12%, #eef3f9 0%, transparent 25%),
+    linear-gradient(180deg, #f8fafc 0%, #f5f8fc 100%);
+  color: #172033;
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.how-hero {
+  max-width: 1100px;
+  margin: 10px auto 105px;
+  text-align: center;
+  position: relative;
+}
+
+
+/* decorative background glow */
+
+.how-hero::before {
+  content: "";
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  top: -120px;
+  left: -120px;
+
+  background: rgba(49, 82, 125, 0.08);
+
+  border-radius: 50%;
+
+  filter: blur(5px);
+
+  pointer-events: none;
+}
+
+.how-hero::after {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  right: -100px;
+  bottom: -100px;
+
+  background: rgba(49, 82, 125, 0.06);
+
+  border-radius: 50%;
+
+  filter: blur(5px);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO TAG
+========================================================= */
+
+.how-tag {
+  position: relative;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 25px;
+
+  border-radius: 50px;
+
+  background: #e8eef8;
+
+  border: 1px solid #d8e2ef;
+
+  color: #31527d;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  box-shadow:
+    0 8px 25px rgba(49, 82, 125, 0.10);
+
+  transition: all 0.3s ease;
+}
+
+.how-tag::before {
+  content: "✦";
+
+  margin-right: 9px;
+
+  font-size: 14px;
+}
+
+.how-tag:hover {
+  transform: translateY(-4px);
+
+  background: #dfe8f4;
+
+  box-shadow:
+    0 14px 30px rgba(49, 82, 125, 0.16);
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.how-hero h1 {
+  position: relative;
+  z-index: 2;
+
+  max-width: 950px;
+
+  margin: 30px auto 25px;
+
+  font-size: clamp(48px, 6vw, 76px);
+
+  line-height: 1.04;
+
+  letter-spacing: -3.5px;
+
+  font-weight: 800;
+
+  background: linear-gradient(
+    135deg,
+    #172033 15%,
+    #263c5b 50%,
+    #31527d 90%
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  opacity: 0;
+
+  transform: translateY(28px);
+
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+
+
+/* React/JS class */
+
+.how-hero h1.heading-visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.how-hero p {
+  position: relative;
+  z-index: 2;
+
+  max-width: 760px;
+
+  margin: 0 auto;
+
+  font-size: 19px;
+
+  line-height: 1.85;
+
+  color: #667085;
+}
+
+
+/* =========================================================
+   HERO EXTRA VISUAL LINE
+========================================================= */
+
+.how-hero p::after {
+  content: "";
+
+  display: block;
+
+  width: 65px;
+  height: 3px;
+
+  margin: 28px auto 0;
+
+  border-radius: 10px;
+
+  background: linear-gradient(
+    90deg,
+    #172033,
+    #31527d
+  );
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.how-intro {
+  max-width: 1100px;
+
+  margin: auto;
+
+  padding: 50px;
+
+  display: grid;
+
+  grid-template-columns: 90px 1fr;
+
+  gap: 35px;
+
+  align-items: center;
+
+  background: rgba(255,255,255,0.96);
+
+  border: 1px solid #e0e6ee;
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 20px 55px rgba(23,32,51,0.07);
+
+  transition: all 0.3s ease;
+}
+
+.how-intro:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 28px 65px rgba(23,32,51,0.11);
+}
+
+.intro-icon {
+  width: 82px;
+  height: 82px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 21px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #172033,
+      #31527d
+    );
+
+  color: white;
+
+  font-size: 34px;
+
+  box-shadow:
+    0 14px 30px rgba(23,32,51,0.20);
+}
+
+.section-label {
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.7px;
+
+  color: #31527d;
+}
+
+.how-intro h2 {
+  margin: 13px 0;
+
+  font-size: 34px;
+
+  line-height: 1.25;
+}
+
+.how-intro p {
+  margin: 0;
+
+  color: #667085;
+
+  line-height: 1.85;
+
+  font-size: 16px;
+}
+
+
+/* =========================================================
+   PROGRESS BAR
+========================================================= */
+
+.progress-container {
+  max-width: 1100px;
+
+  margin: 75px auto 40px;
+}
+
+.progress-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 14px;
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.2px;
+}
+
+.progress-header strong {
+  padding: 7px 14px;
+
+  border-radius: 30px;
+
+  background: #e8eef8;
+
+  color: #31527d;
+}
+
+.progress-track {
+  width: 100%;
+
+  height: 11px;
+
+  background: #e2e6eb;
+
+  border-radius: 30px;
+
+  overflow: hidden;
+}
+
+.progress-bar {
+  width: 16.66%;
+
+  height: 100%;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #172033,
+      #31527d
+    );
+
+  box-shadow:
+    0 0 15px rgba(49,82,125,0.30);
+
+  transition: width 0.5s ease;
+}
+
+.progress-container p {
+  margin-top: 14px;
+
+  color: #667085;
+
+  font-size: 14px;
+}
+
+.progress-container p strong {
+  color: #172033;
+}
+
+
+/* =========================================================
+   STEP CARDS
+========================================================= */
+
+.steps-container {
+  max-width: 1100px;
+
+  margin: 40px auto;
+}
+
+.step-card {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+
+  padding: 32px;
+
+  margin-bottom: 20px;
+
+  background: rgba(255,255,255,0.96);
+
+  border: 1px solid #e1e6ed;
+
+  border-radius: 21px;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.step-card:hover {
+  transform: translateY(-7px);
+
+  border-color: #c8d4e2;
+
+  box-shadow:
+    0 20px 45px rgba(23,32,51,0.10);
+}
+
+.active-step {
+  border: 2px solid #31527d;
+
+  background:
+    linear-gradient(
+      110deg,
+      #ffffff,
+      #f4f7fb
+    );
+
+  transform: translateY(-6px);
+
+  box-shadow:
+    0 22px 50px rgba(49,82,125,0.14);
+}
+
+.step-icon {
+  min-width: 75px;
+
+  width: 75px;
+  height: 75px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 19px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #172033,
+      #31527d
+    );
+
+  color: white;
+
+  box-shadow:
+    0 12px 28px rgba(23,32,51,0.18);
+
+  transition: all 0.3s ease;
+}
+
+.step-card:hover .step-icon {
+  transform: scale(1.07) rotate(-3deg);
+}
+
+.step-icon span {
+  font-size: 24px;
+}
+
+.step-icon small {
+  margin-top: 4px;
+
+  font-size: 9px;
+
+  opacity: 0.75;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-label {
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.3px;
+
+  color: #31527d;
+}
+
+.step-content h2 {
+  margin: 9px 0 10px;
+
+  font-size: 25px;
+}
+
+.step-content p {
+  margin: 0;
+
+  color: #667085;
+
+  line-height: 1.75;
+
+  font-size: 15px;
+}
+
+.current-label {
+  display: inline-block;
+
+  margin-top: 13px;
+
+  padding: 6px 12px;
+
+  border-radius: 30px;
+
+  background: #edf3f9;
+
+  color: #31527d;
+
+  font-size: 10px;
+
+  font-weight: 800;
+}
+
+
+/* =========================================================
+   STEP DETAILS
+========================================================= */
+
+.step-details {
+  max-width: 1100px;
+
+  margin: 65px auto;
+
+  padding: 50px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #ffffff,
+      #f6f9fc
+    );
+
+  border: 1px solid #e1e6ed;
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 20px 50px rgba(23,32,51,0.08);
+}
+
+.step-details h2 {
+  margin: 12px 0 14px;
+
+  font-size: 34px;
+}
+
+.step-details > p {
+  max-width: 800px;
+
+  color: #667085;
+
+  line-height: 1.85;
+
+  font-size: 16px;
+}
+
+.details-button {
+  margin-top: 18px;
+
+  padding: 13px 24px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #172033;
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.details-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 10px 25px rgba(23,32,51,0.20);
+}
+
+.extra-details {
+  margin-top: 30px;
+
+  padding: 28px;
+
+  border-top: 1px solid #e2e6eb;
+
+  background: #f5f8fb;
+
+  border-radius: 14px;
+
+  animation: fadeIn 0.3s ease;
+}
+
+.extra-details h3 {
+  margin-bottom: 9px;
+
+  font-size: 19px;
+}
+
+.extra-details p {
+  color: #667085;
+
+  line-height: 1.75;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   STEP CONTROLS
+========================================================= */
+
+.step-controls {
+  max-width: 1100px;
+
+  margin: 35px auto 90px;
+
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.step-controls button {
+  padding: 14px 27px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #172033;
+
+  color: white;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.step-controls button:hover:not(:disabled) {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 10px 25px rgba(23,32,51,0.20);
+}
+
+.step-controls button:disabled {
+  opacity: 0.3;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================================
+   LAWYER SECTION
+========================================================= */
+
+.lawyer-section {
+  max-width: 1150px;
+
+  margin: 110px auto;
+}
+
+.lawyer-heading {
+  max-width: 720px;
+
+  margin-bottom: 45px;
+}
+
+.lawyer-heading h2 {
+  margin: 14px 0;
+
+  font-size: 42px;
+
+  line-height: 1.18;
+}
+
+.lawyer-heading p {
+  color: #667085;
+
+  line-height: 1.85;
+}
+
+.lawyer-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+.lawyer-card {
+  padding: 30px;
+
+  background: white;
+
+  border: 1px solid #e1e6ed;
+
+  border-radius: 21px;
+
+  transition: 0.3s;
+}
+
+.lawyer-card:hover {
+  transform: translateY(-10px);
+
+  box-shadow:
+    0 22px 50px rgba(23,32,51,0.11);
+}
+
+.lawyer-top {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+}
+
+.lawyer-avatar {
+  width: 58px;
+  height: 58px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e8eef8;
+
+  color: #31527d;
+
+  font-weight: 800;
+}
+
+.lawyer-top h3 {
+  margin: 0 0 5px;
+
+  font-size: 18px;
+}
+
+.lawyer-top p {
+  margin: 0;
+
+  color: #667085;
+
+  font-size: 13px;
+}
+
+.rating {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin: 23px 0;
+}
+
+.rating span {
+  color: #d69b2c;
+
+  font-size: 15px;
+
+  letter-spacing: 2px;
+}
+
+.lawyer-info {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 11px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid #edf0f3;
+
+  color: #667085;
+
+  font-size: 13px;
+}
+
+.view-button {
+  width: 100%;
+
+  margin-top: 23px;
+
+  padding: 12px;
+
+  border: 1px solid #172033;
+
+  border-radius: 9px;
+
+  background: white;
+
+  color: #172033;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.view-button:hover {
+  background: #172033;
+
+  color: white;
+
+  transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.features-section {
+  max-width: 1150px;
+
+  margin: 110px auto;
+}
+
+.features-heading {
+  text-align: center;
+
+  margin-bottom: 50px;
+}
+
+.features-heading h2 {
+  margin-top: 14px;
+
+  font-size: 42px;
+
+  line-height: 1.2;
+}
+
+.feature-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 22px;
+}
+
+.feature-box {
+  padding: 31px;
+
+  background: white;
+
+  border: 1px solid #e1e6ed;
+
+  border-radius: 20px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition: 0.3s;
+}
+
+.feature-box::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 4px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #172033,
+      #31527d
+    );
+
+  transform: scaleX(0);
+
+  transform-origin: left;
+
+  transition: 0.3s;
+}
+
+.feature-box:hover::before {
+  transform: scaleX(1);
+}
+
+.feature-box:hover {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 20px 45px rgba(23,32,51,0.09);
+}
+
+.feature-icon {
+  width: 55px;
+  height: 55px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #eef3f9;
+
+  border-radius: 14px;
+
+  font-size: 23px;
+
+  transition: 0.3s;
+}
+
+.feature-box:hover .feature-icon {
+  transform: scale(1.08) rotate(-4deg);
+}
+
+.feature-box h3 {
+  margin: 19px 0 9px;
+
+  font-size: 20px;
+}
+
+.feature-box p {
+  margin: 0;
+
+  color: #667085;
+
+  line-height: 1.7;
+
+  font-size: 14px;
+}
+
+
+/* =========================================================
+   CLIENT SECTION
+========================================================= */
+
+.client-section {
+  max-width: 1150px;
+
+  margin: 90px auto;
+
+  padding: 50px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 55px;
+
+  background: white;
+
+  border: 1px solid #e1e6ed;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 18px 45px rgba(23,32,51,0.07);
+}
+
+.client-section h2 {
+  margin: 14px 0;
+
+  font-size: 31px;
+
+  line-height: 1.3;
+}
+
+.client-section p {
+  color: #667085;
+
+  line-height: 1.85;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.how-bottom {
+  max-width: 1100px;
+
+  margin: 100px auto 20px;
+
+  padding: 70px 45px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 90% 10%,
+      #31527d,
+      transparent 35%
+    ),
+    #172033;
+
+  color: white;
+
+  border-radius: 28px;
+
+  box-shadow:
+    0 25px 65px rgba(23,32,51,0.20);
+}
+
+.how-bottom .section-label {
+  color: #b7c9df;
+}
+
+.how-bottom h2 {
+  margin: 15px 0;
+
+  font-size: 38px;
+
+  line-height: 1.25;
+}
+
+.how-bottom p {
+  max-width: 680px;
+
+  margin: auto;
+
+  color: #c8ced8;
+
+  line-height: 1.8;
+}
+
+.explore-button {
+  margin-top: 28px;
+
+  padding: 14px 30px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: white;
+
+  color: #172033;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.explore-button:hover {
+  transform: translateY(-4px) scale(1.02);
+
+  box-shadow:
+    0 12px 28px rgba(0,0,0,0.2);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .how-page {
+    padding: 65px 5%;
+  }
+
+  .how-hero h1 {
+    font-size: 55px;
+
+    letter-spacing: -2.5px;
+  }
+
+  .lawyer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .how-page {
+    padding: 45px 5%;
+  }
+
+  .how-hero {
+    margin-bottom: 70px;
+  }
+
+  .how-tag {
+    padding: 10px 18px;
+
+    font-size: 12px;
+
+    letter-spacing: 1.3px;
+  }
+
+  .how-hero h1 {
+    font-size: 39px;
+
+    letter-spacing: -1.8px;
+
+    line-height: 1.08;
+  }
+
+  .how-hero p {
+    font-size: 16px;
+
+    line-height: 1.75;
+  }
+
+  .how-intro {
+    grid-template-columns: 1fr;
+
+    padding: 32px;
+
+    gap: 22px;
+  }
+
+  .intro-icon {
+    width: 65px;
+    height: 65px;
+
+    font-size: 27px;
+  }
+
+  .how-intro h2 {
+    font-size: 26px;
+  }
+
+  .progress-container {
+    margin-top: 55px;
+  }
+
+  .step-card {
+    align-items: flex-start;
+
+    gap: 17px;
+
+    padding: 21px;
+  }
+
+  .step-icon {
+    min-width: 56px;
+
+    width: 56px;
+    height: 56px;
+  }
+
+  .step-icon span {
+    font-size: 18px;
+  }
+
+  .step-content h2 {
+    font-size: 19px;
+  }
+
+  .step-content p {
+    font-size: 14px;
+  }
+
+  .step-details {
+    padding: 31px;
+  }
+
+  .step-details h2 {
+    font-size: 27px;
+  }
+
+  .lawyer-heading h2 {
+    font-size: 32px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .features-heading h2 {
+    font-size: 31px;
+  }
+
+  .client-section {
+    grid-template-columns: 1fr;
+
+    padding: 32px;
+
+    gap: 30px;
+  }
+
+  .how-bottom {
+    padding: 45px 25px;
+
+    border-radius: 21px;
+  }
+
+  .how-bottom h2 {
+    font-size: 28px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 430px) {
+
+  .how-hero h1 {
+    font-size: 33px;
+  }
+
+  .how-tag {
+    font-size: 11px;
+
+    padding: 9px 15px;
+  }
+
+  .step-card {
+    padding: 17px;
+  }
+
+  .step-icon {
+    min-width: 50px;
+
+    width: 50px;
+    height: 50px;
+  }
+
+  .step-content h2 {
+    font-size: 17px;
+  }
+
+  .lawyer-card {
+    padding: 22px;
+  }
+
+  .how-bottom {
+    padding: 40px 20px;
+  }
+}
