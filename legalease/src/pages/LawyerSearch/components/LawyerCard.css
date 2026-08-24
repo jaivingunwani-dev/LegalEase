@@ -1,0 +1,72 @@
+.lawyer-card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--space-md);
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.lawyer-card:hover {
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
+}
+
+.lawyer-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--color-bg-alt);
+  border: 1px solid var(--color-gold);
+  color: var(--color-gold-light);
+  font-family: var(--font-display);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-sm);
+}
+
+.lawyer-name {
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.lawyer-practice {
+  color: var(--color-gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+}
+
+.lawyer-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: 6px;
+}
+
+.lawyer-rating {
+  color: var(--color-gold-light);
+}
+
+.lawyer-location {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
+}
+
+.lawyer-view-link {
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text);
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.lawyer-view-link:hover {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
