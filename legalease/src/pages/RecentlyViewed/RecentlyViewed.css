@@ -1,0 +1,33 @@
+.recently-viewed-page {
+  min-height: 60vh;
+}
+
+.recently-viewed-empty {
+  border: 1px dashed var(--color-border);
+  padding: var(--space-lg);
+  text-align: center;
+  border-radius: 4px;
+  color: var(--color-text-muted);
+}
+
+.recently-viewed-empty p {
+  margin-bottom: var(--space-md);
+}
+
+.recently-viewed-page .lawyer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .recently-viewed-page .lawyer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .recently-viewed-page .lawyer-grid {
+    grid-template-columns: 1fr;
+  }
+}

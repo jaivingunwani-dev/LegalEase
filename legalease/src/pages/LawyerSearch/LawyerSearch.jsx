@@ -2,25 +2,40 @@ import { useState } from "react";
 import lawyers from "../../data/lawyers.js";
 import SearchBar from "./components/SearchBar.jsx";
 import LawyerFilters from "./components/LawyerFilters.jsx";
+import CityFilter from "./components/CityFilter.jsx";
 import LawyerCard from "./components/LawyerCard.jsx";
 import "./LawyerSearch.css";
 
 function LawyerSearch() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedArea, setSelectedArea] = useState("all");
+  const [selectedCity, setSelectedCity] = useState("all");
 
-  // Filtering logic: start with all lawyers, then narrow down
-  // step by step based on the current search text and filter.
+  const [searchedTerm, setSearchedTerm] = useState("");
+  const [searchedArea, setSearchedArea] = useState("all");
+  const [searchedCity, setSearchedCity] = useState("all");
+
   const filteredLawyers = lawyers.filter((lawyer) => {
-    const matchesSearch = lawyer.name
+    const matchesName = lawyer.name
       .toLowerCase()
-      .includes(searchTerm.toLowerCase());
+      .includes(searchedTerm.toLowerCase());
 
     const matchesArea =
-      selectedArea === "all" || lawyer.practiceArea === selectedArea;
+      searchedArea === "all" ||
+      lawyer.practiceArea === searchedArea;
 
-    return matchesSearch && matchesArea;
+    const matchesCity =
+      searchedCity === "all" ||
+      lawyer.location === searchedCity;
+
+    return matchesName && matchesArea && matchesCity;
   });
+
+  function handleSearch() {
+    setSearchedTerm(searchTerm.trim());
+    setSearchedArea(selectedArea);
+    setSearchedCity(selectedCity);
+  }
 
   return (
     <div className="section lawyer-search-page">
@@ -31,10 +46,20 @@ function LawyerSearch() {
         </div>
 
         <div className="search-controls">
-          <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+          <SearchBar
+            searchTerm={searchTerm}
+            onSearchChange={setSearchTerm}
+            onSearch={handleSearch}
+          />
+
           <LawyerFilters
             selectedArea={selectedArea}
             onAreaChange={setSelectedArea}
+          />
+
+          <CityFilter
+            selectedCity={selectedCity}
+            onCityChange={setSelectedCity}
           />
         </div>
 
@@ -43,10 +68,9 @@ function LawyerSearch() {
           {filteredLawyers.length !== 1 ? "s" : ""} found
         </p>
 
-        {}
         {filteredLawyers.length === 0 ? (
           <p className="no-results">
-            No lawyers match your search. Try a different name or practice area.
+            No lawyers match your search. Try different search options.
           </p>
         ) : (
           <div className="lawyer-grid">

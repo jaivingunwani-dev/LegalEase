@@ -8,6 +8,7 @@ function LawyerFilters({ selectedArea, onAreaChange }) {
       onChange={(event) => onAreaChange(event.target.value)}
     >
       <option value="all">All Practice Areas</option>
+
       {practiceAreas.map((area) => (
         <option value={area.name} key={area.id}>
           {area.name}

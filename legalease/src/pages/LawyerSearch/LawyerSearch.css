@@ -5,6 +5,17 @@
   flex-wrap: wrap;
 }
 
+/* Search form */
+
+.search-form {
+  display: flex;
+  gap: var(--space-sm);
+  flex: 1;
+  min-width: 280px;
+}
+
+/* Search input and dropdowns */
+
 .search-bar,
 .lawyer-filter {
   background-color: var(--color-bg-card);
@@ -18,7 +29,11 @@
 
 .search-bar {
   flex: 1;
-  min-width: 220px;
+  min-width: 180px;
+}
+
+.search-bar::placeholder {
+  color: var(--color-text-muted);
 }
 
 .search-bar:focus,
@@ -26,6 +41,40 @@
   border-color: var(--color-gold);
   outline: none;
 }
+
+/* Dropdowns */
+
+.lawyer-filter {
+  min-width: 180px;
+  cursor: pointer;
+}
+
+/* Search button */
+
+.search-button {
+  background-color: var(--color-gold);
+  color: var(--color-bg);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 2px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.search-button:hover {
+  opacity: 0.85;
+}
+
+.search-button:focus {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
+
+/* Results */
 
 .results-count {
   color: var(--color-text-muted);
@@ -41,20 +90,51 @@
   border-radius: 4px;
 }
 
+/* Lawyer cards */
+
 .lawyer-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-md);
 }
 
+/* Tablet */
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .lawyer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search-controls {
+    flex-direction: column;
+  }
+
+  .search-form,
+  .lawyer-filter {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+
 @media (max-width: 768px) {
   .lawyer-grid {
     grid-template-columns: 1fr;
   }
-}
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .lawyer-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .search-controls {
+    flex-direction: column;
+  }
+
+  .search-form {
+    width: 100%;
+    min-width: 0;
+    flex-direction: column;
+  }
+
+  .search-bar,
+  .lawyer-filter,
+  .search-button {
+    width: 100%;
   }
 }
