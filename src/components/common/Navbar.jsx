@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import Logo from "./Logo.jsx";
+import logoImg from "../../assets/logo.jpg";
 import "./Navbar.css";
 
 function Navbar() {
@@ -17,7 +17,12 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="container navbar-inner">
-        <Logo size="medium" onClick={closeMenu} />
+        <Link to="/" className="navbar-brand" onClick={closeMenu}>
+          <img src={logoImg} alt="LegalEase Logo" className="navbar-brand-logo" />
+          <span className="navbar-brand-text">
+            Legal<span className="brand-accent">Ease</span>
+          </span>
+        </Link>
 
         {/* Hamburger button, only visible on mobile via CSS */}
         <button

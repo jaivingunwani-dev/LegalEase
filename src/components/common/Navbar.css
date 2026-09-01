@@ -15,6 +15,48 @@
   height: 80px;
 }
 
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.navbar-brand:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.navbar-brand-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid rgba(198, 161, 91, 0.4);
+  box-shadow: 0 0 12px rgba(198, 161, 91, 0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar-brand:hover .navbar-brand-logo {
+  transform: scale(1.04);
+  box-shadow: 0 0 16px rgba(198, 161, 91, 0.45);
+}
+
+.navbar-brand-text {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+}
+
+.brand-accent {
+  background: linear-gradient(135deg, #f5e2b3 0%, #c6a15b 60%, #e0bd7a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .navbar-links {
   display: flex;
   align-items: center;

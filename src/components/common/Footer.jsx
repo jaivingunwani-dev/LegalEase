@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logo from "./Logo.jsx";
+import logoImg from "../../assets/logo.jpg";
 import "./Footer.css";
 
 function Footer() {
@@ -7,7 +7,15 @@ function Footer() {
     <footer className="footer">
       <div className="container footer-inner">
         <div className="footer-brand-col">
-          <Logo size="medium" showTagline={true} />
+          <Link to="/" className="footer-brand-link">
+            <img src={logoImg} alt="LegalEase Logo" className="footer-brand-logo" />
+            <div className="footer-brand-text">
+              <span className="footer-brand-name">
+                Legal<span className="brand-accent">Ease</span>
+              </span>
+              <span className="footer-brand-tagline">Verified Legal Access</span>
+            </div>
+          </Link>
           <p className="footer-tagline">
             Connecting clients with verified, top-tier attorneys. Transparent
             credentials, direct consultation, and trusted legal guidance.

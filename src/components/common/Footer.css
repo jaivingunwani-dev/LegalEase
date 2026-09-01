@@ -17,6 +17,51 @@
   max-width: 360px;
 }
 
+.footer-brand-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-brand-link:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+.footer-brand-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid rgba(198, 161, 91, 0.4);
+  box-shadow: 0 0 12px rgba(198, 161, 91, 0.25);
+}
+
+.footer-brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.footer-brand-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.45rem;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+}
+
+.footer-brand-tagline {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
 .footer-tagline {
   color: var(--color-text-muted);
   font-size: 0.9rem;
