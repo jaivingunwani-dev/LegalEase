@@ -1,6 +1,6 @@
 import { useState } from "react";
-import lawyers from "../../data/lawyers.js";
-import SearchBar from "./components/SearchBar.jsx";
+import { useContext } from "react";
+import { LawyerContext } from "../../context/LawyerContext.jsx";import SearchBar from "./components/SearchBar.jsx";
 import LawyerFilters from "./components/LawyerFilters.jsx";
 import CityFilter from "./components/CityFilter.jsx";
 import LawyerCard from "./components/LawyerCard.jsx";
@@ -14,6 +14,14 @@ function LawyerSearch() {
   const [searchedTerm, setSearchedTerm] = useState("");
   const [searchedArea, setSearchedArea] = useState("all");
   const [searchedCity, setSearchedCity] = useState("all");
+  const { lawyers, loading, error } = useContext(LawyerContext);
+  if (loading) {
+    return <p>Loading lawyers...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
 
   const filteredLawyers = lawyers.filter((lawyer) => {
     const matchesName = lawyer.name

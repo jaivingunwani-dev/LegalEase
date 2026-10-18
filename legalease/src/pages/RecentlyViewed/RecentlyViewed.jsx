@@ -1,21 +1,31 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
-import lawyers from "../../data/lawyers.js";
+import { LawyerContext } from "../../context/LawyerContext.jsx";
 import LawyerCard from "../LawyerSearch/components/LawyerCard.jsx";
 import "./RecentlyViewed.css";
 
 function RecentlyViewed() {
-  const [recentlyViewed] = useState(() => {
-    const storedLawyers = JSON.parse(
-      localStorage.getItem("recentlyViewedLawyers")
-    ) || [];
+  const { lawyers, loading, error } = useContext(LawyerContext);
 
-    return storedLawyers;
+  const [recentlyViewed] = useState(() => {
+    return (
+      JSON.parse(localStorage.getItem("recentlyViewedLawyers")) || []
+    );
   });
 
   const recentlyViewedLawyers = recentlyViewed
-    .map((id) => lawyers.find((lawyer) => lawyer.id === id))
+    .map((id) =>
+      lawyers.find((lawyer) => String(lawyer.id) === String(id))
+    )
     .filter(Boolean);
+
+  if (loading) {
+    return <p>Loading recently viewed lawyers...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
 
   return (
     <div className="section recently-viewed-page">

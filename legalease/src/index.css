@@ -1,0 +1,117 @@
+/* ============================================
+   GLOBAL DESIGN TOKENS
+   These CSS variables are the "black & gold" theme.
+   Every page/component reuses these instead of
+   hardcoding colors, so the whole site stays consistent.
+============================================ */
+:root {
+  /* Backgrounds */
+  --color-bg: #0a0a0b;
+  --color-bg-alt: #141416;
+  --color-bg-card: #17171a;
+
+  /* Gold accent */
+  --color-gold: #c6a15b;
+  --color-gold-light: #e4c989;
+
+  /* Text */
+  --color-text: #f2efe9;
+  --color-text-muted: #a9a6a0;
+
+  /* Borders / dividers */
+  --color-border: #2b2b2e;
+
+  /* Fonts */
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-body: "Inter", "Segoe UI", sans-serif;
+
+  /* Spacing scale (used loosely across pages) */
+  --space-sm: 12px;
+  --space-md: 24px;
+  --space-lg: 48px;
+  --space-xl: 96px;
+
+  /* Shared layout width */
+  --content-width: 1160px;
+}
+
+/* Basic reset so every browser starts from the same place */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+/* Reusable container so every section lines up the same way */
+.container {
+  width: 100%;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Small gold eyebrow label used above section headings */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+}
+
+/* Thin gold rule used as a small signature underline under headings */
+.gold-rule {
+  width: 56px;
+  height: 3px;
+  background-color: var(--color-gold);
+  border: none;
+  margin: var(--space-sm) 0 var(--space-md);
+}
+
+/* Focus outline for accessibility (keyboard navigation) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}

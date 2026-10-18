@@ -1,0 +1,38 @@
+.about-inner {
+  max-width: 720px;
+}
+
+.about-text {
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-md);
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.about-value-card {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--space-md);
+}
+
+.about-value-card h3 {
+  color: var(--color-gold);
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.about-value-card p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .about-values {
+    grid-template-columns: 1fr;
+  }
+}

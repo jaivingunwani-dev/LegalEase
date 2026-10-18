@@ -7,6 +7,7 @@ function ContactLawyer({ lawyerName, lawyerId }) {
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [errors, setErrors] = useState({});
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -14,13 +15,24 @@ function ContactLawyer({ lawyerName, lawyerId }) {
     const trimmedName = name.trim();
     const trimmedMessage = message.trim();
 
-    if (trimmedName === "" || trimmedMessage === "") {
+    const newErrors = {};
+
+    if (trimmedName === "") {
+      newErrors.name = "Please enter your name.";
+    }
+
+    if (trimmedMessage === "") {
+      newErrors.message = "Please enter your message.";
+    }
+
+    setErrors(newErrors);
+
+    if (Object.keys(newErrors).length > 0) {
       return;
     }
 
-    const storedRequests = JSON.parse(
-      localStorage.getItem(CONTACT_REQUESTS_KEY)
-    ) || [];
+    const storedRequests =
+      JSON.parse(localStorage.getItem(CONTACT_REQUESTS_KEY)) || [];
 
     const newRequest = {
       id: Date.now(),
@@ -49,7 +61,7 @@ function ContactLawyer({ lawyerName, lawyerId }) {
         <hr className="gold-rule" />
 
         <p>
-          Thanks, {name}. Your message for {lawyerName} has been saved.
+          Thanks, {name.trim()}. Your message for {lawyerName} has been saved.
         </p>
 
         <p>
@@ -75,8 +87,13 @@ function ContactLawyer({ lawyerName, lawyerId }) {
           type="text"
           className="contact-input"
           value={name}
-          onChange={(event) => setName(event.target.value)}
+          onChange={(event) => {
+            setName(event.target.value);
+            setErrors({ ...errors, name: "" });
+          }}
         />
+
+        {errors.name && <p className="form-error">{errors.name}</p>}
 
         <label className="contact-label" htmlFor="message">
           Message
@@ -87,8 +104,15 @@ function ContactLawyer({ lawyerName, lawyerId }) {
           className="contact-input contact-textarea"
           rows="4"
           value={message}
-          onChange={(event) => setMessage(event.target.value)}
+          onChange={(event) => {
+            setMessage(event.target.value);
+            setErrors({ ...errors, message: "" });
+          }}
         />
+
+        {errors.message && (
+          <p className="form-error">{errors.message}</p>
+        )}
 
         <Button type="submit">Send Message</Button>
       </form>

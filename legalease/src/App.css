@@ -1,0 +1,42 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Shared "section" spacing used by every page section component */
+.section {
+  padding: var(--space-xl) 0;
+}
+
+.section-alt {
+  background-color: var(--color-bg-alt);
+}
+
+.section-heading {
+  max-width: 640px;
+  margin-bottom: var(--space-lg);
+}
+
+.section-heading h2 {
+  font-size: 2rem;
+}
+
+.section-heading p {
+  color: var(--color-text-muted);
+  margin-top: var(--space-sm);
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-lg) 0;
+  }
+
+  .section-heading h2 {
+    font-size: 1.6rem;
+  }
+}

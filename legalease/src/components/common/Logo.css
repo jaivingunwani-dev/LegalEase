@@ -1,0 +1,93 @@
+.brand-logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.brand-logo-link:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.brand-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  position: relative;
+  transition: filter 0.3s ease;
+}
+
+.brand-logo-link:hover .brand-icon-wrapper {
+  filter: drop-shadow(0 0 10px rgba(198, 161, 91, 0.45));
+}
+
+.brand-icon-svg {
+  display: block;
+  width: 36px;
+  height: 36px;
+  transition: transform 0.3s ease;
+}
+
+.brand-logo-link:hover .brand-icon-svg {
+  transform: scale(1.04);
+}
+
+.brand-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brand-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.55rem;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+}
+
+.brand-name-accent {
+  background: linear-gradient(135deg, #f5e2b3 0%, #c6a15b 60%, #e0bd7a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.brand-tagline {
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+/* Size Variants */
+.brand-logo-small .brand-icon-svg {
+  width: 28px;
+  height: 28px;
+}
+
+.brand-logo-small .brand-name {
+  font-size: 1.25rem;
+}
+
+.brand-logo-large .brand-icon-svg {
+  width: 48px;
+  height: 48px;
+}
+
+.brand-logo-large .brand-name {
+  font-size: 2.1rem;
+}
+
+.brand-logo-large .brand-tagline {
+  font-size: 0.78rem;
+}

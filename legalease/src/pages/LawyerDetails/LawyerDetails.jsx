@@ -1,26 +1,30 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import lawyers from "../../data/lawyers.js";
+import { LawyerContext } from "../../context/LawyerContext.jsx";
 import LawyerProfile from "./components/LawyerProfile.jsx";
 import LawyerExperience from "./components/LawyerExperience.jsx";
 import ContactLawyer from "./components/ContactLawyer.jsx";
 import "./LawyerDetails.css";
 
 function LawyerDetails() {
+  const { lawyers, loading, error } = useContext(LawyerContext);
   const { lawyerId } = useParams();
 
-  const lawyer = lawyers.find((item) => item.id === Number(lawyerId));
+  const lawyer = lawyers.find(
+    (item) => String(item.id) === lawyerId
+  );
 
   useEffect(() => {
     if (!lawyer) return;
 
-    const storedLawyers = JSON.parse(
-      localStorage.getItem("recentlyViewedLawyers")
-    ) || [];
+    const storedLawyers =
+      JSON.parse(localStorage.getItem("recentlyViewedLawyers")) || [];
 
     const updatedLawyers = [
       lawyer.id,
-      ...storedLawyers.filter((id) => id !== lawyer.id),
+      ...storedLawyers.filter(
+        (id) => String(id) !== String(lawyer.id)
+      ),
     ].slice(0, 5);
 
     localStorage.setItem(
@@ -28,6 +32,14 @@ function LawyerDetails() {
       JSON.stringify(updatedLawyers)
     );
   }, [lawyer]);
+
+  if (loading) {
+    return <p>Loading lawyer details...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
 
   if (!lawyer) {
     return (

@@ -1,0 +1,151 @@
+/* ===== Hero ===== */
+.hero {
+  padding: var(--space-xl) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.hero-inner {
+  max-width: 720px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-top: var(--space-sm);
+}
+
+.hero-subtitle {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  max-width: 560px;
+  margin-bottom: var(--space-lg);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+/* ===== How It Works ===== */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.step-card {
+  border: 1px solid var(--color-border);
+  padding: var(--space-md);
+  border-radius: 4px;
+}
+
+.step-number {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+}
+
+.step-card h3 {
+  margin-bottom: 8px;
+}
+
+.step-card p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* ===== Practice Areas ===== */
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.practice-card {
+  background-color: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--space-md);
+  transition: border-color 0.2s ease;
+}
+
+.practice-card:hover {
+  border-color: var(--color-gold);
+}
+
+.practice-icon {
+  font-size: 1.6rem;
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.practice-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+
+.practice-card p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+
+/* ===== Featured Lawyers ===== */
+.lawyer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+.featured-view-all {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
+.featured-view-all-link {
+  font-weight: 600;
+  color: var(--color-gold);
+  border-bottom: 1px solid var(--color-gold);
+  padding-bottom: 2px;
+}
+
+/* ===== Why Choose Us ===== */
+.reasons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+}
+
+.reason-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+}
+
+.reason-card p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.1rem;
+  }
+
+  .steps-grid,
+  .practice-grid,
+  .lawyer-grid,
+  .reasons-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .steps-grid,
+  .practice-grid,
+  .lawyer-grid,
+  .reasons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
