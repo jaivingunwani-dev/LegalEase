@@ -53,22 +53,11 @@ function ContactLawyer({ lawyerName, lawyerId }) {
     setSubmitted(true);
   }
 
-  if (submitted) {
-    return (
-      <div className="contact-lawyer contact-success">
-        <h2>Request Sent</h2>
-
-        <hr className="gold-rule" />
-
-        <p>
-          Thanks, {name.trim()}. Your message for {lawyerName} has been saved.
-        </p>
-
-        <p>
-          This is a demo project, so no real message was sent to the lawyer.
-        </p>
-      </div>
-    );
+  function handleCloseModal() {
+    setSubmitted(false);
+    setName("");
+    setMessage("");
+    setErrors({});
   }
 
   return (
@@ -116,6 +105,45 @@ function ContactLawyer({ lawyerName, lawyerId }) {
 
         <Button type="submit">Send Message</Button>
       </form>
+
+      {submitted && (
+        <div
+          className="success-modal-overlay"
+          onClick={handleCloseModal}
+        >
+          <div
+            className="success-modal"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="success-modal-title"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="success-modal-close"
+              onClick={handleCloseModal}
+              aria-label="Close success message"
+            >
+              &times;
+            </button>
+
+            <div className="success-modal-icon">&#10003;</div>
+
+            <h2 id="success-modal-title">Request Sent!</h2>
+
+            <p>
+              Thanks, {name.trim()}! Your message for{" "}
+              <strong>{lawyerName}</strong> has been saved successfully.
+            </p>
+
+            
+
+            <Button type="button" onClick={handleCloseModal}>
+              Done
+            </Button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
