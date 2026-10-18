@@ -11,7 +11,7 @@ function LawyerProvider({ children }) {
     async function fetchLawyers() {
       try {
         const response = await fetch(
-          "https://6ad4d99c48476c0785d94bb3.mockapi.io/lawyers"
+          "https://6ad4d99c48476c0785d94bb3.mockapi.io/lawyers"   
         );
 
         if (!response.ok) {

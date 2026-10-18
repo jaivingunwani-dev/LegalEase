@@ -5,6 +5,7 @@ import LawyerProfile from "./components/LawyerProfile.jsx";
 import LawyerExperience from "./components/LawyerExperience.jsx";
 import ContactLawyer from "./components/ContactLawyer.jsx";
 import "./LawyerDetails.css";
+import ErrorModal from "../../components/common/ErrorModal.jsx";
 
 function LawyerDetails() {
   const { lawyers, loading, error } = useContext(LawyerContext);
@@ -38,8 +39,13 @@ function LawyerDetails() {
   }
 
   if (error) {
-    return <p>Error: {error}</p>;
-  }
+  return (
+    <ErrorModal
+      message={error}
+      onClose={() => window.location.reload()}
+    />
+  );
+}
 
   if (!lawyer) {
     return (

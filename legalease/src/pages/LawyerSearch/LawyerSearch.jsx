@@ -5,6 +5,7 @@ import LawyerFilters from "./components/LawyerFilters.jsx";
 import CityFilter from "./components/CityFilter.jsx";
 import LawyerCard from "./components/LawyerCard.jsx";
 import "./LawyerSearch.css";
+import ErrorModal from "../../components/common/ErrorModal.jsx";
 
 function LawyerSearch() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -20,8 +21,13 @@ function LawyerSearch() {
   }
 
   if (error) {
-    return <p>Error: {error}</p>;
-  }
+  return (
+    <ErrorModal
+      message={error}
+      onClose={() => window.location.reload()}
+    />
+  );
+}
 
   const filteredLawyers = lawyers.filter((lawyer) => {
     const matchesName = lawyer.name

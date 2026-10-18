@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { LawyerContext } from "../../context/LawyerContext.jsx";
 import LawyerCard from "../LawyerSearch/components/LawyerCard.jsx";
 import "./RecentlyViewed.css";
+import ErrorModal from "../../components/common/ErrorModal.jsx";
 
 function RecentlyViewed() {
   const { lawyers, loading, error } = useContext(LawyerContext);
@@ -24,8 +25,13 @@ function RecentlyViewed() {
   }
 
   if (error) {
-    return <p>Error: {error}</p>;
-  }
+  return (
+    <ErrorModal
+      message={error}
+      onClose={() => window.location.reload()}
+    />
+  );
+}
 
   return (
     <div className="section recently-viewed-page">
